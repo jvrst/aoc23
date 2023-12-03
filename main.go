@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-  day := 1
+  day := 2
 
   switch day {
   case 1:
