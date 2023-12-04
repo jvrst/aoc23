@@ -1,10 +1,8 @@
 package solutions
 
 import (
-	"bufio"
 	"fmt"
 	"log"
-	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -17,15 +15,13 @@ const (
 )
 
 func SolveDay02() {
-	file := GetFile(2)
+    lines := GetLines(2)
 
 	var validGames []int
 	var gamePowers []int
 
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
+    for _, line := range lines {
 		// var val int
-		line := scanner.Text()
 		nums := fndNums(line)
 		gameNum := getGameNr(line)
 		maxNums := getMaxColors(nums)

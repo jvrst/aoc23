@@ -1,11 +1,9 @@
 package solutions
 
 import (
-	"bufio"
 	"fmt"
 	"log"
 
-	"os"
 	"regexp"
 	"strconv"
 )
@@ -77,18 +75,12 @@ func findNums(text string) ([]int, error) {
 }
 
 func SolveDay01() {
-	file, err := os.Open("./files/day1_1.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
+    lines := GetLines(1)
 
 	var calibrationValues []int
 
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
+    for _, line := range lines {
 		// var val int
-		line := scanner.Text()
 		first, _ := findStringNums(line, false)
 		last, _ := findStringNums(line, true)
 		num := first*10 + last
