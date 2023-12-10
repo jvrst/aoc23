@@ -56,6 +56,7 @@ func parseCards(lines []string) []Card {
 		gameNumbers := strings.Split(splitGame[1], "|")
 		winningNumbersStr := re.FindAllString(gameNumbers[0], -1)
 		haveNumsStr := re.FindAllString(gameNumbers[1], -1)
+
 		var winningNumbers []int
 		var haveNums []int
 		for _, winningNum := range winningNumbersStr {
